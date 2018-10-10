@@ -21,8 +21,6 @@ function aztertu(){
 	var zailtasuna=$("#zailtasuna").val();
 	var gaia=$("#gaia").val();
 
-	console.log(zailtasuna);
-	
 	var ml = expReg.test(mail);
 	
 	if(mail==""||ml==false){alert('[ERROR] \"Mail\" zuzendu behar da');return false;}
@@ -37,43 +35,42 @@ function aztertu(){
 	return true;
 }
 function fitxategi(){
-
 	var $img = $("#img")[0].files[0];
 	$("#neurri").text("fitxategiaren neurria: "+$img.size+" byte");
 	if($img){
 		var FR = new FileReader();
 		FR.readAsDataURL($img);
 		FR.onload=function(e){
-			document.getElementById("marrazkia").src=e.target.result;/*jQueryrekin ez dut lortzen*/
-		}		
+			$("#marrazkia").attr("src",e.target.result);
+		}
 	}
 }
 </script>
 </head>
 <body>
-<form id="galderenF" name="galderenF" action="php/proba.php" onsubmit="return aztertu()">
-<fieldset>
-  <p><label ACCESSKEY=M>Mail(*): <INPUT TYPE=text NAME=mail id="mail"></label></p>
-	<p>
-    <label>Galdera: <INPUT TYPE=text NAME=galdera id="galdera"></label><br/>
-    <label>Erantzun zuzena (*): <INPUT TYPE=text NAME=zuzena id="eZuzen" size="20"></label><br/>
-    <label>Erantzun okerra 1 (*): <INPUT TYPE=text NAME=erantzunokerra1 id="eOker1"></label><br/>
-    <label>Erantzun okerra 2 (*): <INPUT TYPE=text NAME=erantzunokerra2 id="eOker2"></label><br/>
-    <label>Erantzun okerra 3 (*): <INPUT TYPE=text NAME=erantzunokerra3 id="eOker3"></label><br/>
-  </P>
-	<p>
-		<label>Zailtasuna(*): <INPUT TYPE=text NAME=zailtasuna id="zailtasuna"></label><br/>
-		<label>Gaia(*): <INPUT TYPE=text NAME=gaia id="gaia"></label><br/>
-		<label>Argazkia: <INPUT TYPE=file NAME="html_file" ACCEPT="text/html" id="img" onchange="fitxategi()"></label><br/>
-		<span id="neurri"></span><br/>
-		<img src="" id="marrazkia"/>
-	</p>
-	<p>
-		<button type="reset" value="garbitu">Garbitu</button>
-		<button type="submit" value="bidali">Bidali</button>
-	</p>
-</fieldset>
-</form>
+	<form id="galderenF" name="galderenF" action="php/proba.php" onsubmit="return aztertu()">
+		<fieldset>
+		  <p><label ACCESSKEY=M>Mail(*): <INPUT TYPE=text NAME=mail id="mail"></label></p>
+			<p>
+				<label>Galdera: <INPUT TYPE=text NAME=galdera id="galdera"></label><br/>
+				<label>Erantzun zuzena (*): <INPUT TYPE=text NAME=zuzena id="eZuzen" size="20"></label><br/>
+				<label>Erantzun okerra 1 (*): <INPUT TYPE=text NAME=erantzunokerra1 id="eOker1"></label><br/>
+				<label>Erantzun okerra 2 (*): <INPUT TYPE=text NAME=erantzunokerra2 id="eOker2"></label><br/>
+				<label>Erantzun okerra 3 (*): <INPUT TYPE=text NAME=erantzunokerra3 id="eOker3"></label><br/>
+			</p>
+			<p>
+				<label>Zailtasuna(*): <INPUT TYPE=text NAME=zailtasuna id="zailtasuna"></label><br/>
+				<label>Gaia(*): <INPUT TYPE=text NAME=gaia id="gaia"></label><br/>
+				<label>Argazkia: <INPUT TYPE=file NAME="html_file" ACCEPT="text/html" id="img" onchange="fitxategi()"></label><br/>
+				<span id="neurri"></span><br/>
+				<img src="" id="marrazkia"/>
+			</p>
+			<p>
+				<button type="reset" value="garbitu">Garbitu</button>
+				<button type="submit" value="bidali">Bidali</button>
+			</p>
+		</fieldset>
+	</form>
 <a href="layout.html"><img src="images/gezia.png"/></a>
 </body>
 </html>
