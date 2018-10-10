@@ -13,10 +13,10 @@ function fitxategi(){
 	var $img = $("#img")[0].files[0];
 	$("#neurri").text("fitxategiaren neurria: "+$img.size+" byte");
 	if($img){
-		var FR = new FileReader();
-		FR.readAsDataURL($img);
-		FR.onload=function(e){
-			$("#marrazkia").attr("src",e.target.result);
+		var FR = new FileReader();/*fitxategi bat irakurtzeko objetua  sortu*/
+		FR.readAsDataURL($img);/*fitxategiaren edukia irakurri*/
+		FR.onload=function(e){/*fitxategi guztia irakurtu ondoren...*/
+			$("#marrazkia").attr("src",e.target.result);/*'img' objetuaren 'src' propietateari esleitu*/
 		}
 	}
 }
@@ -25,19 +25,19 @@ function fitxategi(){
 <body>
 	<form id="galderenF" name="galderenF" action="php/proba.php">
 		<fieldset>
-			<p><label ACCESSKEY=M>Mail(*): <INPUT TYPE="mail" NAME=mail id="mail" pattern="\w\w[a-z]*\d\d\d@ikasle.ehu.eus$" required></label></p>
+			<p><label>Mail(*): <INPUT TYPE="mail" NAME=mail id="mail" pattern="\w\w[a-z]*\d\d\d@ikasle.ehu.eus$" required></label></p>
 			<p>
-				<label>Galdera: <INPUT TYPE="text" NAME=galdera id="galdera" minlength="10" required></label><br/>
-				<label>Erantzun zuzena (*): <INPUT TYPE="text" NAME=zuzena id="eZuzen" size="20" required></label><br/>
-				<label>Erantzun okerra 1 (*): <INPUT TYPE="text" NAME=erantzunokerra1 id="eOker1" required></label><br/>
-				<label>Erantzun okerra 2 (*): <INPUT TYPE="text" NAME=erantzunokerra2 id="eOker2" required></label><br/>
-				<label>Erantzun okerra 3 (*): <INPUT TYPE="text" NAME=erantzunokerra3 id="eOker3" required></label><br/>
+				<label>Galdera: <INPUT TYPE="text" NAME="galdera" id="galdera" minlength="10" required></label><br/>
+				<label>Erantzun zuzena (*): <INPUT TYPE="text" NAME="zuzena" id="eZuzen" size="20" required></label><br/>
+				<label>Erantzun okerra 1 (*): <INPUT TYPE="text" NAME="erantzunokerra1" id="eOker1" required></label><br/>
+				<label>Erantzun okerra 2 (*): <INPUT TYPE="text" NAME="erantzunokerra2" id="eOker2" required></label><br/>
+				<label>Erantzun okerra 3 (*): <INPUT TYPE="text" NAME="erantzunokerra3" id="eOker3" required></label><br/>
 			</P>
 			<p>
 				<label>Zailtasuna(*): <INPUT TYPE="number" NAME=zailtasuna id="zailtasuna" min="0" max="5" required></label><br/>
 				<label>Gaia(*): <INPUT TYPE="text" NAME=gaia id="gaia" required></label><br/>
 				<label>Argazkia: <INPUT TYPE=file NAME="html_file" ACCEPT="text/html" id="img" onchange="fitxategi()"></label><br/>
-				<span id="neurri" style="color:darkblue;font-weight:bold;"></span>
+				<span id="neurri" style="color:darkblue;font-weight:bold;"></span><br/>
 				<img src="" id="marrazkia"/>
 			</p>
 			<p>
