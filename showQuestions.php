@@ -1,12 +1,12 @@
-<?php
+b<?php
 //datu-basearekin konexioa egin
 //if(!$konexioa=new mysqli("127.0.0.1","root","5artu")){
-if(!$konexioa=new mysqli("localhost","id7270487_zmutu","60ra3u5kalH3rr1a")){
+if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
 	header("location:mezua.php?goiburu=Errorea!!&gorputza=".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
 //datu-basea aukeratu
 //if(!($konexioa->select_db('quiz'))){
-if(!($konexioa->select_db('id7270487_quiz'))){
+if(!($konexioa->select_db('datubasea'))){
 	header("location:mezua.php?goiburu=Errorea!!&gorputza=".$konexioa->error."&auk=+");
 }
 
