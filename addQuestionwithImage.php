@@ -18,7 +18,7 @@ if($mail==''||$galdera==''||$zuzena==''||$erantzunokerra1==''||$erantzunokerra2=
 
 //mysql-rekin konexioa egin
 if(!$konexioa=new mysqli("127.0.0.1","root","5artu")){
-//if(!$konexioa=new mysqli("localhost","id7270487_zmutu","60ra3u5kalH3rr1a")){
+//if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
 	header("location:mezua.php=goiburu=Errorea!!&gorputza=ez da konexioa lortu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
 else{echo("konexioa ezarri da<br/>");}
