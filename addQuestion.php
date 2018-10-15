@@ -23,7 +23,7 @@ if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
 
 //datu-basea aukeratu
 //if(!($konexioa->select_db('quiz'))){
-if(!($konexioa->select_db('id7270487_quiz'))){
+if(!($konexioa->select_db('datu-basea'))){
 	header("location:mezua.php=goiburu=Errorea!!&gorputza=ezin da taula lortu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
 
