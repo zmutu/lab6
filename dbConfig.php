@@ -8,7 +8,7 @@ if ($lokal) {
    $db="quiz";                // hodeiko db izena: hodeiko aurrizkia + zuek adierazitako db izena atzizki moduan
 } else {
    $zerbitzaria="localhost";
-   $erabiltzailea="roidXXXXXXX_zmutu";			// lokalean erabiltzailea root izan ohi da
+   $erabiltzailea="idXXXXXXX_zmutu";			// lokalean erabiltzailea root izan ohi da
    $gakoa="pasahitza";									// eta ez da pasahitzarik jartzen//ba ni bazterrak nahasten ibili ondoren pasahitza behar dut
    $db="idXXXXXXX_quiz";
 }
