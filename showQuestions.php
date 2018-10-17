@@ -4,17 +4,7 @@ include('dbConfig.php');
 
 //DBKS-rekin konexioa egin eta Quiz datu-basea ireki
 $konexioa = new mysqli($zerbitzaria,$erabiltzailea,$gakoa,$db);
-/*
-//if(!$konexioa=new mysqli("127.0.0.1","root","5artu")){
-if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
-	header("location:mezua.php?goiburu=Errorea!!&gorputza=".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
-}
-//datu-basea aukeratu
-//if(!($konexioa->select_db('quiz'))){
-if(!($konexioa->select_db('datubasea'))){
-	header("location:mezua.php?goiburu=Errorea!!&gorputza=".$konexioa->error."&auk=+");
-}
-*/
+
 $sql="Select * from questions";
 
 //sql kontsulta exekutatu
