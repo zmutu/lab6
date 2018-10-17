@@ -15,6 +15,9 @@ if($mail==''||$galdera==''||$zuzena==''||$erantzunokerra1==''||$erantzunokerra2=
 	header("location:mezua.php=goiburu=Errorea!!&gorputza=Ez dira datu guztiak jaso&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>"); 
 }
 
+include('dbConfig.php');
+$konexioa = new mysqli($zerbitzaria,$erabiltzailea,$gakoa,$db);
+/*
 //mysql-rekin konexioa egin
 //if(!$konexioa=new mysqli("127.0.0.1","root","5artu")){
 if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
@@ -26,7 +29,7 @@ if(!$konexioa=new mysqli("zerbitzaria","erabiltzailea","pasahitza")){
 if(!($konexioa->select_db('datu-basea'))){
 	header("location:mezua.php=goiburu=Errorea!!&gorputza=ezin da taula lortu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
-
+*/
 //sql kontsulta sortu
 $sql="insert into questions(mail,galdera,erantzun_zuzena,erantzun_okerra_1,erantzun_okerra_2,erantzun_okerra_3,zailtasuna,gaia) values('".$mail."','".$galdera."','".$zuzena."','".$erantzunokerra1."','".$erantzunokerra2."','".$erantzunokerra3."',".$zailtasuna.",'".$gaia."')";
 
