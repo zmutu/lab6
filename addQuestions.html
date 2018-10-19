@@ -3,37 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Lab 2, Formularioa</title>
-<!--
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!--
+<script src="../js/jquery.js" type="text/javascript"></script>
 -->
-<script src="js/jquery-3.2.1.js" type="text/javascript"></script>
 <script>
-function aztertu(){
-
-	var expReg = new RegExp(/\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$/);
-
-	var mail=$("#mail").val();
-	var galdera=$("#galdera").val();
-	var eZuzen=$("#eZuzen").val();
-	var eOker1=$("#eOker1").val();
-	var eOker2=$("#eOker2").val();
-	var eOker3=$("#eOker3").val();
-	var zailtasuna=$("#zailtasuna").val();
-	var gaia=$("#gaia").val();
-
-	var ml = expReg.test(mail);
-	
-	if(mail==""||ml==false){alert('[ERROR] \"Mail\" zuzendu behar da');return false;}
-	if(galdera==""||galdera.length<10){alert('[ERROR] \"galdera\" eremuan gutxieneko luzera 10 da');return false;}
-	if(eZuzen==""){alert('[ERROR] \"Erantzun zuzena\" ezin da hutsik egon');return false;}
-	if(eOker1==""){alert('[ERROR] \"Erantzun okerra 1\" ezin da hutsik egon');return false;}
-	if(eOker2==""){alert('[ERROR] \"Erantzun okerra 2\" ezin da hutsik egon');return false;}
-	if(eOker3==""){alert('[ERROR] \"Erantzun okerra 3\" ezin da hutsik egon');return false;}
-	if(isNaN(zailtasuna) || zailtasuna > 5 || zailtasuna < 0){alert('[ERROR] Zailtasuna 0 - 5 tartean egon behar du');return false;}
-	if(gaia==""){alert('[ERROR] \"Gaia\" eremua ezin da hutsik egon');return false;}
-
-	return true;
-}
 function fitxategi(){
 	var $img = $("#img")[0].files[0];
 	$("#neurri").text("fitxategiaren neurria: "+$img.size+" byte");
@@ -45,23 +19,58 @@ function fitxategi(){
 		}
 	}
 }
+function garbitu(){
+	$("#marrazkia").attr("src","");
+	$("#neurri").html("");
+}
+$(document).ready(function(){
+	$("#galderenF").submit(function(ev){
+
+		var expReg = new RegExp(/\w\w[a-z]*\d\d\d@ikasle.ehu.eus$/);
+
+		var mail=$("#mail").val();
+		var galdera=$("#galdera").val();
+		var eZuzen=$("#eZuzen").val();
+		var eOker1=$("#eOker1").val();
+		var eOker2=$("#eOker2").val();
+		var eOker3=$("#eOker3").val();
+		var zailtasuna=$("#zailtasuna").val();
+		var gaia=$("#gaia").val();
+
+		var ml = expReg.test(mail);
+		
+		//gehiegizko espazioak kentzeko. ez dakit ze egoera gehio aztertu
+		galdera = galdera.replace(/([\ \t]+(?=[\ \t])|^\s+|\s+$)/g, '');
+		
+		if(mail==""||ml==false){alert('[ERROR] \"Mail\" zuzendu behar da');return false;}
+		if(galdera==""||galdera.length<10){alert('[ERROR] \"galdera\" eremuan gutxieneko luzera 10 da');return false;}
+		if(eZuzen==""){alert('[ERROR] \"Erantzun zuzena\" ezin da hutsik egon');return false;}
+		if(eOker1==""){alert('[ERROR] \"Erantzun okerra 1\" ezin da hutsik egon');return false;}
+		if(eOker2==""){alert('[ERROR] \"Erantzun okerra 2\" ezin da hutsik egon');return false;}
+		if(eOker3==""){alert('[ERROR] \"Erantzun okerra 3\" ezin da hutsik egon');return false;}
+		if(isNaN(zailtasuna) || zailtasuna > 5 || zailtasuna < 0){alert('[ERROR] Zailtasuna 0 - 5 tartean egon behar du');return false;}
+		if(gaia==""){alert('[ERROR] \"Gaia\" eremua ezin da hutsik egon');return false;}
+
+		return true;
+	});
+});
 </script>
 </head>
 <body>
-	<form id="galderenF" name="galderenF" action="php/proba.php" onsubmit="return aztertu()">
+	<form id="galderenF" name="galderenF" method="get" action="php/addQuestion.php" onreset="return garbitu()">
 		<fieldset>
-		  <p><label ACCESSKEY=M>Mail(*): <INPUT TYPE=text NAME=mail id="mail"></label></p>
+		  <p><label ACCESSKEY="M">Mail(*): <INPUT TYPE="text" NAME="mail" id="mail"></label></p>
 			<p>
-				<label>Galdera: <INPUT TYPE=text NAME=galdera id="galdera"></label><br/>
-				<label>Erantzun zuzena (*): <INPUT TYPE=text NAME=zuzena id="eZuzen" size="20"></label><br/>
-				<label>Erantzun okerra 1 (*): <INPUT TYPE=text NAME=erantzunokerra1 id="eOker1"></label><br/>
-				<label>Erantzun okerra 2 (*): <INPUT TYPE=text NAME=erantzunokerra2 id="eOker2"></label><br/>
-				<label>Erantzun okerra 3 (*): <INPUT TYPE=text NAME=erantzunokerra3 id="eOker3"></label><br/>
+				<label>Galdera: <INPUT TYPE="text" NAME="galdera" id="galdera"></label><br/>
+				<label>Erantzun zuzena (*): <INPUT TYPE="text" NAME="zuzena" id="eZuzen" size="20"></label><br/>
+				<label>Erantzun okerra 1 (*): <INPUT TYPE="text" NAME="erantzunokerra1" id="eOker1"></label><br/>
+				<label>Erantzun okerra 2 (*): <INPUT TYPE="text" NAME="erantzunokerra2" id="eOker2"></label><br/>
+				<label>Erantzun okerra 3 (*): <INPUT TYPE="text" NAME="erantzunokerra3" id="eOker3"></label><br/>
 			</p>
 			<p>
-				<label>Zailtasuna(*): <INPUT TYPE=text NAME=zailtasuna id="zailtasuna"></label><br/>
-				<label>Gaia(*): <INPUT TYPE=text NAME=gaia id="gaia"></label><br/>
-				<label>Argazkia: <INPUT TYPE=file NAME="html_file" ACCEPT="text/html" id="img" onchange="fitxategi()"></label><br/>
+				<label>Zailtasuna(*): <INPUT TYPE="text" NAME="zailtasuna" id="zailtasuna"></label><br/>
+				<label>Gaia(*): <INPUT TYPE="text" NAME="gaia" id="gaia"></label><br/>
+				<label>Argazkia: <INPUT TYPE="file" NAME="html_file" ACCEPT="text/html" id="img" onchange="fitxategi()"></label><br/>
 				<span id="neurri" style="color:darkblue;font-weight:bold;"></span><br/>
 				<img src="" id="marrazkia"/>
 			</p>
@@ -71,6 +80,6 @@ function fitxategi(){
 			</p>
 		</fieldset>
 	</form>
-<a href="layout.html"><img src="images/gezia.png"/></a>
+<a href="layout.html"><img src="../images/gezia.png"/></a>
 </body>
 </html>
