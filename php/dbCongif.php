@@ -1,5 +1,5 @@
 <?php
-$leku=1; //0 hodeian eta 1 portatilan
+$leku=0; //0 hodeian eta 1 portatilan
 
 if($leku){
 	$zerbitzaria='localhost';
