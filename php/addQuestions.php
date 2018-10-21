@@ -11,22 +11,22 @@ if(isset($_GET['gaia'])){$gaia=$_GET['gaia'];}
 
 //daturen bat falta den aztertu
 if($mail==''||$galdera==''||$zuzena==''||$erantzunokerra1==''||$erantzunokerra2==''||$erantzunokerra3==''||$zailtasuna==''||$gaia==''){
-	header("location:mezua.php=goiburu=Errorea!!&gorputza=Ez dira datu guztiak jaso&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>"); 
+	header("location:mezua.php?goiburu=Errorea!!&gorputza=Ez dira datu guztiak jaso&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>"); 
 }
 
 include('dbConfig.php');
 
 //mysql-rekin konexioa egin eta datu-basea aukeratu
-if(!$konexioa=new mysqli($zerbitzaria,$erabiltzaile,$gakoa,$db)){
-	header("location:mezua.php=goiburu=Errorea!!&gorputza=ez da konexioa lortu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
+if(!$konexioa = new mysqli($zerbitzaria,$erabiltzaile,$gakoa,$db)){
+	header("location:mezua.php?goiburu=Errorea!!&gorputza=ez da konexioa lortu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
 
 //sql kontsulta sortu
-$sql="insert into Questions(mail,galdera,erantzun_zuzena,erantzun_okerra_1,erantzun_okerra_2,erantzun_okerra_3,zailtasuna,gaia) values('".$mail."','".$galdera."','".$zuzena."','".$erantzunokerra1."','".$erantzunokerra2."','".$erantzunokerra3."',".$zailtasuna.",'".$gaia."')";
+$sql="insert into questions(mail,galdera,erantzun_zuzena,erantzun_okerra_1,erantzun_okerra_2,erantzun_okerra_3,zailtasuna,gaia) values('".$mail."','".$galdera."','".$zuzena."','".$erantzunokerra1."','".$erantzunokerra2."','".$erantzunokerra3."',".$zailtasuna.",'".$gaia."')";
 
 //sql kontsulta exekutatu
 if(!($emaitza=$konexioa->query($sql))){
-	header("location:mezua.php=goiburu=Errorea!!&gorputza=SQL kontsulta ez da exekutatu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
+	header("location:mezua.php?goiburu=Errorea!!&gorputza=SQL kontsulta ez da exekutatu<br/>".$konexioa->error."&auk=<a href='addQuestion.html'>Idatzi beste galdera bat</a>");
 }
 //konexioa itxi
 $konexioa->close();
