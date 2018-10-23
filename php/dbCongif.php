@@ -8,7 +8,7 @@ if($leku){
 	$db='quiz';
 }
 else
-	$zebitzaria='localhost';
+	$zerbitzaria='localhost';
 	$erabiltzaile='id??????_zmutu';
 	$gakoa='??????';
 	$db='id??????_quiz';

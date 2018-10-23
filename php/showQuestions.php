@@ -15,7 +15,7 @@ if(!($emaitza = $konexioa -> query($sql))){
 }
 echo('<style>td{border:dotted 1px #5555AA;}th{border:solid 1px #5555AA;}</style>');
 
-$zutabe = $emaitza -> field_count;
+$zutabe = $emaitza -> field_count - 2;
 
 echo('<table style = "border:solid 1px #5555AA;"><tr>');
 
