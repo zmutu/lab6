@@ -25,7 +25,7 @@ else{
 
 //daturen bat falta den aztertu
 if($mail == ''||$galdera == ''||$zuzena == ''||$erantzunokerra1 == ''||$erantzunokerra2 == ''||$erantzunokerra3 == ''||$zailtasuna == ''||$gaia == ''){
-	header("location:mezua.php?goiburu=Errorea!!&gorputza=Ez dira datu guztiak jaso&auk=<a href = 'addQuestion.html'>Idatzi beste galdera bat</a>"); 
+	header("location:mezua.php?goiburu=Errorea!!&gorputza=Ez dira datu guztiak jaso&auk=<a href = 'addQuestion_HTML5.html'>Idatzi beste galdera bat</a>"); 
 }
 
 $imgs = array("image/jpg", "image/jpeg", "image/gif", "image/png", "image/bmp");
@@ -44,8 +44,7 @@ if(is_uploaded_file($img)){
 	}
 }
 else{
-	$mezu = $mezu.'<br/>fitxategia ez da jaso';
-  header("location:mezua:php?goiburu=Errorea!!!&gorputza=Marrazkia ez da zerbitzarira iritsi&auk=<a href = 'layuot.html'>Itzuli hasierara</a>");
+	header("location:mezua:php?goiburu=Errorea!!!&gorputza=Marrazkia ez da zerbitzarira iritsi&auk=<a href = 'layuot.html'>Itzuli hasierara</a>");
 }
 //sql kontsulta sortu
 $sql = "insert into questions(mail,galdera,erantzun_zuzena,erantzun_okerra_1,erantzun_okerra_2,erantzun_okerra_3,zailtasuna,gaia,marrazkia,mota) values('".$mail."','".$galdera."','".$zuzena."','".$erantzunokerra1."','".$erantzunokerra2."','".$erantzunokerra3."',".$zailtasuna.",'".$gaia."','".$img."','".$img_tp."')";
@@ -57,5 +56,5 @@ if(!($emaitza = $konexioa -> query($sql))){
 //konexioa itxi
 $konexioa -> close();
 
-header("location:mezua.php?goiburu=Eskaera gauzatu da&gorputza=Bidalitako datuak batu-basean ongi gorde dira&auk=<a href = 'showQuestionswithImage.php'>Ikusi galdera guztiak</a><br/><a href='../layout.html'>Itzuli orri nagusira</a>");
+header("location:mezua.php?goiburu=Eskaera gauzatu da&gorputza=Bidalitako datuak batu-basean ongi gorde dira&auk=<a href = 'showQuestionswithImage.php'>Ikusi galdera guztiak</a><br/><hr width='150px'/><br/><a href='../layout.html'>Itzuli orri nagusira</a>");
 ?>
