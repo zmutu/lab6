@@ -14,7 +14,7 @@ $(document).ready(function() {
 	//galdera[i].childNodes[1].childNodes[1].childNodes[0].nodeValue+'</td><td>'+
 	//galdera[i].childNodes[3].childNodes[1].childNodes[0].nodeValue+'</td></tr>'
 	var htm = '<tr><th>Egilea</th><th>Galdera</th><th>Erantzun zuzena</th></tr>';
-	$.get('../xml/questions.xml',function(d){
+	$.get('../xml/questionsTransAuto.xml',function(d){
 		var galdera = $(d).find('assessmentItem');
 		for(var i=0; i<galdera.length; i++){
 			htm += '<tr><td>'+
@@ -29,7 +29,7 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
-<h1>'questions.xml' fitxategiaren galderak</h1>
+<h1>'questionsTransAuto.xml' fitxategiaren galderak</h1>
 <table id='galderak'></table>
 <a href = 'layout.php?mail=<?php echo($mail)?>'>Orri nagusia</a>
 </body>
