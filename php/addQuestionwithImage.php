@@ -93,8 +93,8 @@ function fitxategia_aztertu($k,$f){
 	return array($img,$img_tp);
 }
 function gorde_XML($m,$g,$ez,$e1,$e2,$e3,$z,$ga){
-	if (file_exists('../xml/questions.xml')) {
-		$xml = simplexml_load_file('../xml/questions.xml');
+	if (file_exists('../xml/questionsTransAuto.xml')) {
+		$xml = simplexml_load_file('../xml/questionsTransAuto.xml');
 	}
 	else{return 'fitxategia ez da aurkitzen';}
 	$nodoa = $xml -> addChild('assessmentItem');
@@ -112,7 +112,7 @@ function gorde_XML($m,$g,$ez,$e1,$e2,$e3,$z,$ga){
 	$okerrak -> addChild('value',$e2);
 	$okerrak -> addChild('value',$e3);
 	
-	$xml -> asXML('../xml/questions.xml');
+	$xml -> asXML('../xml/questionsTransAuto.xml');
 	//gordetzean errorerik egon bada mezua jaso behar da
 	return '';
 }
