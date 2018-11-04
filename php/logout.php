@@ -5,7 +5,7 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 <html>
 <head>
 <meta charset='UTF-8'>
-<title>Lab 3, Log In</title>
+<title>Lab 4, Log In</title>
 <link rel='icon' type='image/png' href='images/fabikon.png' />
 <style>
 #msg{border:solid 2px #0055AA;background-color:#55AAFF;font-size:2em;display:none;padding:5px;position:absolute;top:250;}
