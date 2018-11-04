@@ -37,7 +37,7 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 		<span><a href='addQuestion_HTML5.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>Add question (html5)</a></span>
 		<span><a href='showQuestionswithImage.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera zerrenda</a></span>
 		<span><a href='showXMLQuestions.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera XML</a></span>
-		<span><a href='../xml/questions.xml'>Galderak XSL</a>
+		<span><a href='../xml/questionsTransAuto.xml'>Galderak XSL</a>
 		<span><a href='../getUserInform.html'>User Info</a></span>
 		<?php }?>
 		<span><a href='credits.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>Credits</a></span><br/>
