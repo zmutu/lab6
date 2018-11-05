@@ -65,7 +65,7 @@ if(isset($msg)){
 	<form id="galderenF" name="galderenF" enctype="multipart/form-data" onreset="garbitu()" method="post" action="addQuestionwithImage.php">
 		<fieldset>
 			<img id='erabiltzaile' src='<?php echo($img);?>' width='50'/>
-			<p><label>Mail(*): <INPUT TYPE='mail' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='<?php echo($mail);?>' required></label></p>
+			<p><label>Mail(*): <INPUT TYPE='mail' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='<?php echo($mail);?>' disabled></label></p>
 			<p>
 				<label>Galdera (*): <INPUT TYPE='text' NAME='galdera' id='galdera' minlength='10' required></label><br/>
 				<label>Erantzun zuzena (*): <INPUT TYPE='text' NAME='zuzena' id='eZuzen' size='20' required></label><br/>
