@@ -97,7 +97,7 @@ echo("
 		<fieldset style='text-align:center;'>
 			<h3>LOG IN</h3>
 			<span><label>Mail*: <INPUT TYPE='mail' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='".$m."' required></label><span><br/><br/>
-			<span><label>Pasahitza*: <INPUT TYPE='pasword' NAME='pasahitza' id='pasahitza1' size='20' value='' required></label></span><br/>
+			<span><label>Pasahitza*: <INPUT TYPE='password' NAME='pasahitza' id='pasahitza1' size='20' value='' required></label></span><br/>
 			<p>	<button type='submit' value='bidali'>Bidali</button></p>
 			<p><a href='layout.php");
 			if(isset($mail)){echo('?mail='.$mail);}
