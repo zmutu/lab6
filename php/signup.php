@@ -121,7 +121,7 @@ echo("</script>
 	<form id='galderenF' name='galderenF' enctype='multipart/form-data' onreset='garbitu()' method='post' action='".$_SERVER['PHP_SELF']."'>
 		<fieldset style='text-align:center;'>
 			<h3 style='text-align:center;'>SIGN UP</h3>
-			<p><label>Mail*: <INPUT TYPE='password' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='".$m."' required></label></p>
+			<p><label>Mail*: <INPUT TYPE='text' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='".$m."' required></label></p>
 			<p>
 				<label>Izena*: <INPUT TYPE='text' NAME='izena' id='izena' value='".$i."' required></label><br/>
 				<label>Pasahitza*: <INPUT TYPE='password' NAME='pasahitza1' id='pasahitza1' minlength='8' size='20' value='' required></label><br/>
