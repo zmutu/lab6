@@ -1,2 +1,43 @@
 <?xml version="1.0"?>
-<assessmentItems><assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia"><itemBody><p>Zein Amanita da jangarria?</p></itemBody><correctResponse><value>Caesarea</value></correctResponse><incorrectResponses><value>Phalloides</value><value>Muscaria</value><value>Virosa</value></incorrectResponses></assessmentItem><assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia"><itemBody><p>Onddoek zer dute kapela azpian?</p></itemBody><correctResponse><value>Himenioa</value></correctResponse><incorrectResponses><value>Filamenduak</value><value>Eztenak</value><value>Hodiak</value></incorrectResponses></assessmentItem><assessmentItem author="mafalda001@ikasle.ehu.eus" subject="mikologia"><itemBody><p>Eranztuna du</p></itemBody><correctResponse><value>Galanpernak</value></correctResponse><incorrectResponses><value>Gibel urdinak</value><value>Esnegorriak</value><value>Errotariak</value></incorrectResponses></assessmentItem><assessmentItem author="cmutuberria001@ikasle.ehu.eus" subject="matematika"><itemBody><p>Bat bida hiru lau...</p></itemBody><correctResponse><value>...bost sei zazpi zortzi</value></correctResponse><incorrectResponses><value>...xardina bakalau</value><value>..garrena</value><value>eh?</value></incorrectResponses></assessmentItem><assessmentItem author="cmutuberria001@ikasle.ehu.eus" subject="Gizarte Zientziak"><itemBody><p>Eiderrek arkatza galdu du eta zuk aurkitu duzu. Zer esango duzu?</p></itemBody><correctResponse><value>Eiderren arkatza mahaiaren azpian dago</value></correctResponse><incorrectResponses><value>Eiderren arkatza mahaiko azpian dago</value><value>Eiderren arkatza mahaiaren azpiko dago</value><value>Eiderrek arkatza berria erosi beharko du</value></incorrectResponses></assessmentItem></assessmentItems>
+<?xml-stylesheet type='text/xsl' href='showXMLQuestions.xsl'?>
+<assessmentItems>
+	<assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia">
+		<itemBody> 
+			<p>Zein Amanita da jangarria?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Caesarea</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Phalloides</value>
+			<value>Muscaria</value>
+			<value>Virosa</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="rosa001@ikasle.ehu.eus" subject="mikologia">
+		<itemBody> 
+			<p>Onddoek zer dute kapela azpian?</p>
+		</itemBody>
+		<correctResponse>
+			<value>Himenioa</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Filamenduak</value>
+			<value>Eztenak</value>
+			<value>Hodiak</value>
+		</incorrectResponses>
+	</assessmentItem>
+	<assessmentItem author="mafalda001@ikasle.ehu.eus" subject="mikologia">
+		<itemBody>
+			<p>Eranztuna du</p>
+		</itemBody>
+		<correctResponse>
+			<value>Galanpernak</value>
+		</correctResponse>
+		<incorrectResponses>
+			<value>Gibel urdinak</value>
+			<value>Esnegorriak</value>
+			<value>Errotariak</value>
+		</incorrectResponses>
+	</assessmentItem>
+</assessmentItems>
