@@ -36,7 +36,8 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 		<?php if(isset($mail)){?>
 		<span><a href='addQuestion_HTML5.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>Add question (html5)</a></span>
 		<span><a href='showQuestionswithImage.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera zerrenda</a></span>
-		<span><a href='showXMLQuestions.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera XML</a></span>
+		<span><a href='showXMLQuestions1.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera XML (*)</a></span>
+		<span><a href='showXMLQuestions2.php<?php if(isset($mail)){echo("?mail=".$mail);}?>'>galdera XML (**)</a></span>
 		<span><a href='../xml/questionsTransAuto.xml'>Galderak XSL</a>
 		<span><a href='../getUserInform.html'>User Info</a></span>
 		<?php }?>
@@ -49,7 +50,7 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
     </section>
 	<footer class='main' id='f1'>
 		 <a href='https://github.com'>Link GITHUB</a>
-	</footer>
+	</footer>(*) -> jQueryrekin<br/>(**) -> PHPrekin<br/>
 </div>
 </body>
 </html>
