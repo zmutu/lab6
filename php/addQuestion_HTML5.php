@@ -32,6 +32,10 @@ else{$img = '';}
 -->
 <script src='../js/jquery.js' type='text/javascript'></script>
 <script>
+function garbitu(){
+	$('#marrazkia').attr('src','');
+	$('#neurri').text('');
+}
 function fitxategi(){
 	var $img = $('#img')[0].files[0];
 	$('#neurri').text('fitxategiaren neurria: '+$img.size+' byte');
@@ -39,7 +43,7 @@ function fitxategi(){
 		var FR = new FileReader();/*fitxategi bat irakurtzeko objetua  sortu*/
 		FR.readAsDataURL($img);/*fitxategiaren edukia irakurri*/
 		FR.onload=function(e){/*fitxategi guztia irakurtu ondoren...*/
-			$('#marrazkia').attr('src',e.target.result);/*'img' objetuaren 'src' propietateari esleitu*/
+			$('#marrazkia').attr({'src':e.target.result,'width':100});/*'img' objetuaren 'src' propietateari esleitu*/
 		}
 	}
 }
@@ -65,7 +69,7 @@ if(isset($msg)){
 	<form id="galderenF" name="galderenF" enctype="multipart/form-data" onreset="garbitu()" method="post" action="addQuestionwithImage.php">
 		<fieldset>
 			<img id='erabiltzaile' src='<?php echo($img);?>' width='50'/>
-			<p><label>Mail(*): <INPUT TYPE='mail' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='<?php echo($mail);?>' disabled></label></p>
+			<INPUT TYPE='hidden' NAME='mail' id='mail' pattern='\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$' value='<?php echo($mail);?>' >
 			<p>
 				<label>Galdera (*): <INPUT TYPE='text' NAME='galdera' id='galdera' minlength='10' required></label><br/>
 				<label>Erantzun zuzena (*): <INPUT TYPE='text' NAME='zuzena' id='eZuzen' size='20' required></label><br/>
