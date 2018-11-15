@@ -19,8 +19,8 @@ p {text-align:center;}
 <p>Software Ingeniaritza</p>
 <p><img src='../images/cest_moi.png'/><p>
 <p>Bilbo</p>
-<a href='layout.php".$m."'>
-<img src='../images/gezia.png'/></a>
+<p onclick='window.history.back()'>
+<img src='../images/gezia.png' style='cursor:pointer;cursor:hand'/></p>
 </body>
 </html>");
 ?>

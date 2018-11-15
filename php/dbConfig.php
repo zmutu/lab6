@@ -13,4 +13,10 @@ else{
 	$gakoa='60ra3u5kalH3rr1a';
 	$db='id7270487_quiz';
 }
+/***
+border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+***/
 ?>
