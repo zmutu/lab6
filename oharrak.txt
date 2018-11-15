@@ -1,0 +1,16 @@
+hautazko 1 ataza:
+handlingQuizesAJAX.php' kargatzen denean, eta 20 segundu oro, zerbitzarian dagoen
+'emanErregistroakOraintxeBertan.php'-ri deitzendio jQueryren GET metodoa erabiliz. 
+Hark parametro gisa, erabiltzailearen mail bidaltzen dio. Honek datu-baseari bi 
+kontsulta egiten dizkio. Erabiltzaileak zenbat galdera dituen kontsulta bat eginez 
+bat eta bestea datu-basean zenbat galdera dauden guztira. Emaitza testu gordina 
+bidaltzen dio bezeroari.
+
+hautazko 2 ataza:
+erabiltzaile bat kautotzen denean, counter.xml fitxategian gordetzen da, alde batetik
+erabiltzaile kopurua bat gehituz eta bestetik bere mail ere gordetzen da (hau ez zuela
+eskatzen uste dut). 'handlingQuizesAJAX.php' kargatzen denean, hautazko 1 atazan bezala,
+setInterval funtzioari esker 20 segundu oro counter.xml fitxategia eskatzen dio
+zerbitzariari jQueryren 'get' futzioa erabiliz. Bezeroak counter.xml fitxategi guztia
+jasotzen du eta javascript bitartez (jQuery haiz zuzen ere), jasotako informazioa atzitu
+eta behar duen informazioa erakusten du.
