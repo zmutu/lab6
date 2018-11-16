@@ -27,38 +27,6 @@ else{$img = '';}
 -->
 <script src='../js/jquery.js' type='text/javascript'></script>
 <script>
-function bidali(){
-	var datuak = new FormData($('#galderenF'));
-	$.ajax({
-		url:'addQuestionwithImage.php',
-		type: 'POST',
-		data: datuak,
-		processData: false,
-		contentType: false,
-		dataType: 'text',
-		success: function(em){
-			$m = $('#msg');
-			$m.html(em);
-			$w = $(window);
-			$m.css({top:($w.height()-$m.height())/2,lef:($w.width()-$m.width())/2}).show();
-			setTimeout(function(){$m.fadeOut();},5000);
-		},
-		error: function(er){
-			$m = $('#msg');
-			$m.html(er);
-			$w = $(window);
-			$m.css({top:($w.height()-$m.height())/2,lef:($w.width()-$m.width())/2,'background-color':'orange'}).show();
-			setTimeout(function(){$m.fadeOut();},10000);
-		},
-		complete: function(msg){
-			$m = $('#msg');
-			$m.html(msg);
-			$w = $(window);
-			$m.css({top:($w.height()-$m.height())/2,lef:($w.width()-$m.width())/2,'background-color':'yellow'}).show();
-			setTimeout(function(){$m.fadeOut();},10000);
-		}
-	});
-}
 function garbitu(){
 	$('#marrazkia').attr('src','');
 	$('#neurri').text('');
