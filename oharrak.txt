@@ -1,16 +1,5 @@
-hautazko 1 ataza:
-handlingQuizesAJAX.php' kargatzen denean, eta 20 segundu oro, zerbitzarian dagoen
-'emanErregistroakOraintxeBertan.php'-ri deitzendio jQueryren GET metodoa erabiliz. 
-Hark parametro gisa, erabiltzailearen mail bidaltzen dio. Honek datu-baseari bi 
-kontsulta egiten dizkio. Erabiltzaileak zenbat galdera dituen kontsulta bat eginez 
-bat eta bestea datu-basean zenbat galdera dauden guztira. Emaitza testu gordina 
-bidaltzen dio bezeroari.
+hautazkoa 1 ataza
+'handlingQuizesAJAX.php' kargatzen eta 20 segundu pasa hondoren 'emanErregistroakOraintxeBertan.php' scriptari eskatuz deitzen dio jQueryren 'GET' metodoaren bitartez. Eskaeran kautotuta dagoen erabiltzailearen mail bidaltzen dio. 'emanErregistroakOraintxeBertan.php' scriptak datu-baseari bi SQL galdera egiten dizkio. Bat, kautotuta dagoen erabiltzailearen galdera kopurua, eta bestea galdera kopuru guztiak. Bi emaitza horiek bezeroari, testu gordinean, bidaltzen dizkio. Bezero aldean, $.get testua jaso eta span batean erakusten du. Prozesu hori 20 segundu oro egiten du, horretarako setInterval javascripten funtzioa erabili dut.
 
-hautazko 2 ataza:
-erabiltzaile bat kautotzen denean, counter.xml fitxategian gordetzen da, alde batetik
-erabiltzaile kopurua bat gehituz eta bestetik bere mail ere gordetzen da (hau ez zuela
-eskatzen uste dut). 'handlingQuizesAJAX.php' kargatzen denean, hautazko 1 atazan bezala,
-setInterval funtzioari esker 20 segundu oro counter.xml fitxategia eskatzen dio
-zerbitzariari jQueryren 'get' futzioa erabiliz. Bezeroak counter.xml fitxategi guztia
-jasotzen du eta javascript bitartez (jQuery haiz zuzen ere), jasotako informazioa atzitu
-eta behar duen informazioa erakusten du.
+hautazkoa 2 ataza
+Erabiltzaile bat kautozen denean, counter.xml fitxategian eguneratzen da kautotuta dauden erabiltzaile kopurua. Ariketak ez du eskatzen baina erabiltzailearen mail ere gordetzen da. Hori egin aurretik, scriptak kautotu den erabiltzailearen mail gordeta dagoen aztertuko du. Aurkitzen badu, ez dio berriz kautotzea utziko. Hautazko 1 atazan bezala, 'handlingQuizesAJAX.php' kargatzetik amaitzen duenean, 20 segundo pasa ondoren, jQueryren 'GET' metodoaren bitartez, zerbitzariari counter.xml fitxategia eskatzen dio. Zerbitzariak fitxategiaren edukia bidaltzen dio. Honela, bezeroak XML egitura duen testu bat jasoko du. Bezero aldean, javascript bitartez jaso duen egitura atzitu eta kautotuta dauden erabiltzaile kopurua erakutsiko du. Hori dena 20 segundu oro eginen da, aurreko ariketan bezala, setInterval funtzioaren bitartez
