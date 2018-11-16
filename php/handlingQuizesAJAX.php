@@ -73,7 +73,6 @@ $(document).ready(function(){
 			$.get(
 				'../xml/counter.xml',
 				function(e){
-					var u = $(e).find('kopuru')[0];
 					$('#login').html('Konektatutako erabiltzaile kopurua: ' + $(e).find('kopuru')[0].childNodes[0].nodeValue);
 				},
 				'XML'
