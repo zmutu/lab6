@@ -1,5 +1,6 @@
 hautazkoa 1 ataza
-'handlingQuizesAJAX.php' kargatzen eta 20 segundu pasa hondoren 'emanErregistroakOraintxeBertan.php' scriptari eskatuz deitzen dio jQueryren 'GET' 
+'handlingQuizesAJAX.php' kargatzen eta 20 segundu pasa hondoren 'emanErregistroakOraintxeBertan.php'
+scriptari eskatuz deitzen dio jQueryren 'GET' 
 metodoaren bitartez. Eskaeran kautotuta dagoen erabiltzailearen mail bidaltzen dio.
 'emanErregistroakOraintxeBertan.php' scriptak datu-baseari bi SQL galdera egiten 
 dizkio. Bat, kautotuta dagoen erabiltzailearen galdera kopurua, eta bestea galdera
