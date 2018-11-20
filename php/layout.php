@@ -56,7 +56,9 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 				success:function(xml){
 					var htm='<table border="1">';
 					$(xml).find('assessmentItem').each(function(){
-						htm+='<tr><td>'+$(this).attr('author')+'</td><td>'+$(this).find('p').text()+'</td><td>'+$(this).find('correctResponse').find('value').text()+'</td></tr>';						
+						htm+='<tr><td>'+$(this).attr('author')+'</td><td>'+$(this).find('p').text()+
+							'</td><td>'+$(this).find('correctResponse').find('value').text()+
+							'</td></tr>';						
 					});
 					htm+='</table>';
 					$('#gorputza').html(htm);
@@ -70,7 +72,8 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 	<header class='main' id='h1'>
 		<?php
 			if(isset($mail)){echo("<span class='right'>".$mail." || <span onclick='berritu(2)'> LogOut </span>");}
-			else{echo("<span class='right'>anonimous </span> || <span onclick='berritu(0)'>Log In</span> || <span onclick='berritu(1)'> Sign Up </span>");}
+			else{echo("<span class='right'>anonimous </span> || <span onclick='berritu(0)'>Log In</span> || 
+			<span onclick='berritu(1)'> Sign Up </span>");}
 		?>
 		<h2>Quiz: crazy questions</h2>
 	</header>
