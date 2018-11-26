@@ -21,53 +21,32 @@ if(isset($_FILES["html_file"]) && $_FILES["html_file"]["error"] == 0){
 	$neurri = $_FILES['html_file']['size'];		//fitxategiaren neurriak
 }
 
-//------------------------------- pitakora osatzeko -------------------------------
-/*
-$mezu='';
-
-if(isset($mail)){$mezu=$mail;}
-if(isset($izena)){$mezu=$mezu."\niz: ".$izena;}
-if(isset($pasahitza1)){$mezu=$mezu."\np1: ".$pasahitza1;}
-if(isset($img_nm)){$mezu=$mezu."\nim: ".$img_nm;}
-if(isset($fase)){$mezu=$mezu."\nfs: ".$fase;}
-
-$ftx = fopen('fitx.txt','a+');
-fwrite($ftx,$mezu);
-fwrite($ftx,"\n---------\n");
-fclose($ftx);
-*/
-//------------------------------- /pitakora osatzeko -------------------------------
-
 switch($fase){
 	case 0:
 		formularioa();
 		break;
 	case 1: //ikaslea matrikulatuta dagoen aztertu behar da
-		/*
 		require_once("../nuSOAP/nusoap.php");
 		$param = array('eposta' => $mail);
-		$mailMatrikulatutaDago = new soapclient('http://ehusw.es/rosa/webZerbitzuak/egiaztatuMatrikula.php?wsdl', true);
+		$mailMatrikulatutaDago = new nusoap_client('http://ehusw.es/rosa/webZerbitzuak/egiaztatuMatrikula.php?wsdl', true);
 		$matrikulatutaDago = $mailMatrikulatutaDago -> call('egiaztatuE',$param);
-		$dago = $matrikulatutaDago -> getElementsByTagName('z')[0] -> nodeValue;
-		echo($dago);
-		*/
-		echo('BAI');
+		//$dago = $matrikulatutaDago -> getElementsByTagName('z')[0] -> nodeValue;
+		echo($matrikulatutaDago);
 		break;
 	case 2: //pasahitza egokia den aztertu
 		require_once("../nuSOAP/nusoap.php");
 		$param = array('pasahitza' => $pasahitza1,'ticket' => 1010);
-		$pswdSeguruaDa = new soapclient('../baliabideak/egiaztatuPasahitza.wsdl',true);
+		$pswdSeguruaDa = new nusoap_client('egiaztatuPasahitza.php?wsdl',true);
 		$seguruaDa = $pswdSeguruaDa -> call('egokiaDa', $param);
-		//$da = $seguruaDa -> getElementsByTagName('return')[0] -> nodeValue;
+		$da = $seguruaDa -> getElementsByTagName('return')[0] -> nodeValue;
 		//echo($da);
 		echo($seguruaDa);
-		echo('BALIOZKOA');
 		break;
 	default: //datuak aztertu eta gorde
 		$msg = datoak_aztertu($mail,$izena,$pasahitza1,$pasahitza2);
 		if($msg != ''){echo($msg);}
 		else{
-			//datoak jaso da eta egokiak dire
+			//datoak jaso dira eta egokiak dire
 			include('dbConfig.php');
 
 			$max_kb = 1048576; //1Mb-eko argazkia gehienez
@@ -168,7 +147,6 @@ $(document).ready(function(e){
 			data: {'pasahitza1':$(this).val(),'fase':'2'},
 			dataType: 'xml',
 			success: function(em){
-				console.log(em);
 				if(em == 'BALIOZKOA'){
 					egoera ++;
 					if(egoera == 2)$('#bidali').prop("disabled",true);
@@ -189,7 +167,7 @@ $(document).ready(function(e){
 		}
 	});
 });
-function mezua(msg){console.log(msg);
+function mezua(msg){
 	$m = $('#msg');
 	$m.html(msg);
 	$w = $(window);
