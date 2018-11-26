@@ -15,23 +15,21 @@ if($mail=='' && $pasahitza==''){
 $msg = datoak_aztertu($mail,$pasahitza);
 
 if($msg != ''){
-	echo($msg);
-	exit();
+	mezua($msg);
 }
+
 include('dbConfig.php');
 
 $sql = "Select id from users where eposta = '".$mail."' and pasahitza = '".$pasahitza."'";
 
 //konexioa egin
 if(!$konexioa = new mysqli($zerbitzaria,$erabiltzaile,$gakoa,$db)){
-	echo('Errorea datu-basearekin konexua ezartzerakoan');
-	exit();
+	mezua('Errorea datu-basearekin konexua ezartzerakoan');
 }
 else{
 	//kontsulta exekutatu
 	if(!($id = $konexioa -> query($sql))){
-		echo('Errorea datu-baseari kontsulta egiterakoan');
-		exit();
+		mezua('Errorea datu-baseari kontsulta egiterakoan');
 	}
 	else{
 		if($usr_id = $id -> fetch_array(MYSQLI_ASSOC)){
@@ -39,13 +37,12 @@ else{
 			//erabiltzaile kautotu kopurua aldatu...
 			$egitura = new DOMDocument();
 			$egitura -> preserveWhiteSpace = true;
-			$egitura -> load('../xml/counter.xml');
+			$egitura -> load('../baliabideak/counter.xml');
 			//lehenik kautotuta dagoen begiratu
 			$users = $egitura -> getElementsByTagName('erabiltzaile');
 			foreach($users as $user){
 				if($user  -> nodeValue == $mail){
-					echo('Erabiltzaile hori sisteman sartuta dago');
-					exit();
+					mezua('Erabiltzaile hori sisteman sartuta dago');
 				}
 			}
 			$erabiltzaile_kopurua = (int)$egitura -> getElementsByTagName('kopuru') -> item(0) -> nodeValue;
@@ -56,17 +53,19 @@ else{
 			$posta = $egitura -> createTextNode($mail);
 			$erabiltzaile -> appendChild($posta);
 			$users -> appendChild($erabiltzaile);
-			$egitura -> save('../xml/counter.xml');
+			$egitura -> save('../baliabideak/counter.xml');
 			//kautotu bada, layout.php orria birkargatu
 			echo('ongi kautotu da');
 		}
 		else{
-			echo('Erabiltzailea edo pasahitza ez dira zuzenak');
-			exit();
+			mezua('Erabiltzailea edo pasahitza ez dira zuzenak');
 		}
 	}
 }
-
+function mezua($m){
+	echo($m);
+	exit();
+}
 function datoak_aztertu($m,$p){
 	//mail aztertu
 	$exp_reg = '/\w\w[a-z]*\d\d\d@ikasle\.ehu\.eus$/';

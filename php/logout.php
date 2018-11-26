@@ -3,7 +3,7 @@ if(isset($_GET['mail'])){$mail = $_GET['mail'];}
 else{header('location:layout.php');}
 if(isset($_GET['irten'])){
 	$egitura = new DOMDocument();
-	$egitura->load('../xml/counter.xml');
+	$egitura->load('../baliabideak/counter.xml');
 	$erabiltzaile_kopurua = (int)$egitura -> getElementsByTagName('kopuru')[0] -> nodeValue;
 	$erabiltzaile_kopurua--;
 	$egitura -> getElementsByTagName('kopuru')[0] -> nodeValue = $erabiltzaile_kopurua;
@@ -14,7 +14,7 @@ if(isset($_GET['irten'])){
 			$egitura -> getElementsByTagName('erabiltzaileak')[0] -> removeChild($u);
 		}
 	}
-	$egitura -> save('../xml/counter.xml');
+	$egitura -> save('../baliabideak/counter.xml');
 	header('location:layout.php');
 }
 ?>

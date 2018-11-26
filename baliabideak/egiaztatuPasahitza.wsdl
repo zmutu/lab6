@@ -1,0 +1,41 @@
+<definitions targetNamespace="urn:egiaztatuPasahitza">
+	<types>
+		<xsd:schema targetNamespace="urn:egiaztatuPasahitza">
+			<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+			<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+			<xsd:complexType name="pasahitza"/>
+			<xsd:complexType name="return"/>
+		</xsd:schema>
+	</types>
+	<message name="egokiaDaRequest">
+		<part name="pasahitza" type="tns:string"/>
+		<part name="ticket" type="tns:string"/>
+	</message>
+	<message name="egokiaDaResponse">
+		<part name="return" type="tns:string"/>
+	</message>
+	<portType name="egiaztatuPasahitzaPortType">
+		<operation name="egokiaDa">
+			<documentation>pasahitza arrunta den ala ez aztertzen du. Ez bada ala 'BALIOZKOA' itzuliko du, 'BALIOGABEA' bestela.</documentation>
+			<input message="tns:egokiaDaRequest"/>
+			<output message="tns:egokiaDaResponse"/>
+		</operation>
+	</portType>
+	<binding name="egiaztatuPasahitzaBinding" type="tns:egiaztatuPasahitzaPortType">
+	<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="egokiaDa">
+			<soap:operation soapAction="urn:egiaztatuPasahitza#egokiaDa" style="rpc"/>
+			<input>
+				<soap:body use="encoded" namespace="urn:egiaztatuPasahitza" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</input>
+			<output>
+				<soap:body use="encoded" namespace="urn:egiaztatuPasahitza" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</output>
+		</operation>
+	</binding>
+	<service name="egiaztatuPasahitza">
+		<port name="egiaztatuPasahitzaPort" binding="tns:egiaztatuPasahitzaBinding">
+			<soap:address location="http://localhost/lab6/php/egiaztatuPasahitza.php"/>
+		</port>
+	</service>
+</definitions>
