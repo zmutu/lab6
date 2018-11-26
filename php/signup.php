@@ -38,9 +38,11 @@ switch($fase){
 		$param = array('pasahitza' => $pasahitza1,'ticket' => 1010);
 		$pswdSeguruaDa = new nusoap_client('egiaztatuPasahitza.php?wsdl',true);
 		$seguruaDa = $pswdSeguruaDa -> call('egokiaDa', $param);
-		$da = $seguruaDa -> getElementsByTagName('return')[0] -> nodeValue;
-		//echo($da);
-		echo($seguruaDa);
+		if($pswdSeguruaDa->fault){
+			echo "Errorea: <p>Codea: (".$pswdSeguruaDa->faultcode.")</p>";
+			echo "Mezua: ".$pswdSeguruaDa->faultstring;
+		}
+		else{echo $seguruaDa;}
 		break;
 	default: //datuak aztertu eta gorde
 		$msg = datoak_aztertu($mail,$izena,$pasahitza1,$pasahitza2);
