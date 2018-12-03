@@ -13,7 +13,7 @@ $zerb -> wsdl -> addComplexType(
 );
 $zerb -> wsdl -> addComplexType(
 	'return',
-	array('name' => 'return', 'type' => 'xsd:string');
+	array('name' => 'return', 'type' => 'xsd:string')
 );
 $zerb -> register(
 	'egokiaDa',
