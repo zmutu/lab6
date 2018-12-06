@@ -29,7 +29,7 @@ switch($fase){
 		require_once("../nuSOAP/nusoap.php");
 		$param = array('x' => $mail);
 		$mailMatrikulatutaDago = new nusoap_client('http://ehusw.es/rosa/webZerbitzuak/egiaztatuMatrikula.php?wsdl', true);
-		$matrikulatutaDago = $mailMatrikulatutaDago -> call('egiaztatuE',$param);
+		$matrikulatutaDago = $mailMatrikulatutaDago -> call('x',$param);
 		//$dago = $matrikulatutaDago -> getElementsByTagName('z')[0] -> nodeValue;
 		echo($matrikulatutaDago);
 		break;
