@@ -30,7 +30,6 @@ switch($fase){
 		$param = array('x' => $mail);
 		$mailMatrikulatutaDago = new nusoap_client('http://ehusw.es/rosa/webZerbitzuak/egiaztatuMatrikula.php?wsdl', true);
 		$matrikulatutaDago = $mailMatrikulatutaDago -> call('x',$param);
-		//$dago = $matrikulatutaDago -> getElementsByTagName('z')[0] -> nodeValue;
 		echo($matrikulatutaDago);
 		break;
 	case 2: //pasahitza egokia den aztertu
